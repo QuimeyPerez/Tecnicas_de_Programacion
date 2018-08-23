@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Desarrollar un software que le solicite al usuario sus datos personales, 
+# a saber: DNI, nombre y apellido, dirección y teléfono. Mostrar los datos 
+# por pantalla.
+
+declare -i dni=0
+read -p "DNI: " dni
+
+declare name=""
+read -p "Nombre: " name
+
+declare surname=""
+read -p "Apellido: " surname
+
+declare address=""
+read -p "Dirección: " address
+
+declare phoneNumber=""
+read -p "Teléfono: " phoneNumber
+
+echo $dni
+echo $name
+echo $surname
+echo $address
+echo $phoneNumber
+
+exit 0

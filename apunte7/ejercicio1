@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Pedir números por pantalla hasta que alguno sea mayor a 100.
+
+while :
+do
+	declare -i number=0
+	read -p "Numero: " number
+
+	((number <= 100)) || break
+done
+
+exit 0
