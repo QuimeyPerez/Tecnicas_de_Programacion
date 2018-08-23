@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Crear un programa que pida dos número enteros al usuario y diga si alguno de ellos es múltiplo del otro. 
+# Desarrollar una función que ayude a que el proceso principal sea legible.
+
+function areMultiples() {
+	declare -i firstNumber=$1
+	declare -i secondNumber=$2
+	
+	if ((firstNumber % secondNumber == 0 || secondNumber % firstNumber == 0))
+	then
+		echo true
+	else
+		echo false
+	fi
+}
+
+declare -i number1=0
+read -p "Numero: " number1
+
+declare -i number2=0
+read -p "Numero: " number2
+
+
+if [[ $( areMultiples $number1 $number2 ) == true ]]
+then
+	echo "Son múltiplos"
+else
+	echo "NO son múltiplos"
+fi
+
+exit 0

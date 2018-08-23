@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Crear una función que reciba tres números enteros y devuelva el valor del mayor de ellos. 
+# Por ejemplo, para los números 5, 7 y 5, devolvería el valor 7.
+
+function getMax() {
+	declare -i max=$1
+
+	if (($2 > max))
+	then
+		max=$2
+	fi
+
+	if (($3 > max))
+	then
+		max=$3
+	fi
+
+	echo $max
+}
+
+clear
+
+declare -i number1=0
+read -p "Número: " number1
+
+declare -i number1=0
+read -p "Número: " number2
+
+declare -i number1=0
+read -p "Número: " number3
+
+result=$( getMax $number1 $number2 $number3 )
+
+echo "Mayor: $result"
+
+exit 0

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Crear una función que reciba un número entero y devuelva la cantidad de divisores, por ejemplo, 
+# para el número 16, sus divisores son 1, 2, 4, 8, 16, por lo que la respuesta debería ser 5 (utilizar módulo). 
+
+function getDividers() {
+	declare -i targetNumber=$1
+	declare -i dividers=0
+	
+	for ((i = 1; i <= targetNumber; i++)) {
+		if ((targetNumber % i == 0))
+		then
+			dividers=$((dividers + 1))
+		fi
+	}
+
+	echo $dividers
+}
+
+declare -i number=0
+read -p "Número: " number
+
+declare -i result=$( getDividers $number )
+
+echo "Cantidad de divisores: $result"
+
+exit 0

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Programar un algoritmo recursivo que calcule un número de la serie fibonacci.
+
+function fibonacci() {
+	declare -i number=$1
+	
+	if ((number == 0 || number == 1 )) 
+	then
+		echo $number
+	else
+		echo $(( $(fibonacci $((number - 1 ))) + $(fibonacci $((number - 2 ))) ))
+	fi
+}
+
+declare -i number=0
+
+read -p "Número: " number
+
+echo "Fibonacci: $(fibonacci $number)"
+
+exit 0
